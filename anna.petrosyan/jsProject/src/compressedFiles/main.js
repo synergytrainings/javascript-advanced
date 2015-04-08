@@ -1,0 +1,1 @@
+var myFunc=function(a,r,e){"use strict";switch(e){case"+":return parseFloat(a)+parseFloat(r);case"-":return parseFloat(a)-parseFloat(r);case"*":return parseFloat(a)*parseFloat(r);case"/":return parseFloat(a)/parseFloat(r);default:return 0}};
