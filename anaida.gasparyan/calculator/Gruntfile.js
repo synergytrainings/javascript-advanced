@@ -5,14 +5,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
-        // define a string to put between each file in the concatenated output
         separator: ';'
       },
       dist: {
-        // the files to concatenate
-        src: ['src/**/*.js'],
-        // the location of the resulting JS file
+        src: 'src/**/*.js',
         dest: 'dist/concat.js'
+      },
+      dev: {
+        src: 'src/**/*.js',
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     uglify: {
@@ -30,15 +31,27 @@ module.exports = function(grunt) {
     },
     clean: {
       cleanDistDir: {
-        src: ['dist/*']
+        src: ['dist/**/*']
       },
       cleanConcatFiles: {
         src: ['dist/concat.js']
       }
     },
+    jasmine: {
+      src : 'src/**/*.js', 
+      options : {
+        specs : 'test/**/*Spec.js'
+      }
+    },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'jasmine']
+      watchSrcChange: {
+        files: ['<%= jasmine.src %>'],
+        tasks: ['jshint', 'jasmine', 'clean:cleanDistDir', 'concat:dev']
+      },
+      watchJsChange: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint']
+      }
     }
   });
 
@@ -48,9 +61,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   // Default task(s).
-  grunt.registerTask('production', ['jshint', 'clean:cleanDistDir', 'concat', 'uglify', 'clean:cleanConcatFiles']);
-  grunt.registerTask('default', ['jshint', 'clean:cleanDistDir', 'concat', 'uglify']);
+  grunt.registerTask('test', ['jshint', 'jasmine']);
+  grunt.registerTask('production', ['jshint', 'jasmine', 'clean:cleanDistDir', 
+    'concat:dist', 'uglify', 'clean:cleanConcatFiles']);
+  grunt.registerTask('default', ['jshint', 'jasmine', 'clean:cleanDistDir', 'concat:dev']);
 
 };

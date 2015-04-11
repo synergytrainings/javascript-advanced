@@ -1,3 +1,11 @@
+/**
+ * Do basic arithmetic calculations
+ * 
+ * @param  {[integer]} first operand
+ * @param  {[integer]} second operand
+ * @param  {[string]} arithmetic operator
+ * @return {[integer]} calculated arithmetic expression resulr
+ */
 function calculate(operand1, operand2, operator) {
 	'use strict';
 	switch (operator) {
