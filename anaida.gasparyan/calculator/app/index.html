@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	Operand 1 = <input id="op1" type="text"/><br/>
+	Operant 2 = <input id="op2" type="text"/><br/>
+	Operator = <input id="operator" type="text"/><br/>
+	<input type="button" value="Calculate" onclick="calc()">
+
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../dist/scripts/calculator.js"></script>
+	<script type="text/javascript">
+		function calc() {
+			var operand1, operand2, operator;
+			operand1 = +$("#op1").val();
+			operand2 = +$("#op2").val();
+			operator = $("#operator").val();
+			alert(operand1 + operator + operand2 + "=" + calculate(operand1, operand2, operator));
+		}
+	</script>
+</body>
+</html>
