@@ -4,11 +4,21 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="calculator.js"></script>
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+
 <script type="text/javascript">
-	alert(calculate(5, 2, '*'));
+
+$(document).ready(function(){
+	var str = "The result of 5 * 2  = ";
+	var result = calculate(5, 2, '*');
+	var message = str.concat(result);
+
+	$("#result").val(message);
+});
 </script>
 </head>
 <body>
+	<input id = "result"> </input>
 
 </body>
 </html>
