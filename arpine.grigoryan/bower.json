@@ -1,0 +1,21 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "authors": [
+    "Arpine Grigoryan"
+  ],
+  "description": "aritmetical actions",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/synergytrainings/javascript-advanced",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0"
+  }
+}
