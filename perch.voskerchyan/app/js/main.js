@@ -27,7 +27,7 @@ var num2 = 8;
 var opr = '/';
 
 var result = calc(num1, num2, opr);
-var message = "The result of " + num1 + " " + opr + " " + num2 + " = " + result;
+var message = num1 + " " + opr + " " + num2 + " = " + result;
 
 $(document).ready(function(){
 	$(".result").text(message);
