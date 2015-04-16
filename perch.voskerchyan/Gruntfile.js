@@ -35,7 +35,7 @@ grunt.initConfig({
 
 	// Jasmine
 	jasmine: {
-		src: 'app/js/*.js',
+		src: ['app/js/*.js'],
 		options: {
 			specs: ['app/test/spec.js']
 		}
@@ -54,9 +54,10 @@ grunt.loadNpmTasks('grunt-htmlhint-plus');
 grunt.loadNpmTasks('grunt-contrib-csslint');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-wiredep');
 
 // Default tasks
-grunt.registerTask('default', ['csslint', 'htmlhintplus', 'jshint', 'uglify']);
+grunt.registerTask('default', ['csslint', 'htmlhintplus', 'jshint', 'uglify', 'jasmine']);
 
 };
