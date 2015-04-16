@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator JS</title>
+
+<!-- bower:css -->
+<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+<link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+
+	<div class="container text-center">
+		<h1 class="page-header">Sample Calculator</h1>
+		<div class="alert alert-success col-sm-8 col-sm-offset-2">
+			<h2 class="result"></h2>
+		</div>
+	</div>
+
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<script>
+	var num1 = 9;
+	var num2 = 8;
+	var opr = '/';
+</script>
+<script src="js/main.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".result").text(massage);
+	});
+</script>
+
+</body>
+</html>
