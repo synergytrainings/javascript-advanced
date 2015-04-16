@@ -6,7 +6,7 @@ OperatorEnum = {
 
 	getBySymbol : function (symb) {
 		for (var op in this) {
-			if (symb == this[op].symb) {
+			if ( !(this[op] instanceof Function) && symb == this[op].symb) {
 				return this[op];
 			}
 		}
