@@ -1,0 +1,17 @@
+.calculator {
+	width: 450px;
+	padding-top: 100px;
+}
+
+.calculator .result {
+	text-align: right;
+	font-weight: bold;
+}
+
+.calculator .btn {
+	margin: 5px 0 5px 0;
+}
+
+.calculator .btn-primary.active {
+	border-color: #F06B0C;
+}
