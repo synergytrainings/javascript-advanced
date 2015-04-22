@@ -2,15 +2,51 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="scripts/calculator.js"></script>
+    <script>
+    $(document).ready(function() {
+    initCalculator();
+    });
+    </script>
     <title></title>
 </head>
 <body>
 
 Calculator
 <script type="text/javascript">
-    alert(calculate(10, 2, '-'));
+
 </script>
+
+<div id="calculator">
+        <div class="top">
+        <span id="clear" class="clear">C</span>
+        <div class="screen"></div>
+    </div>
+
+    <div class="keys">
+        <span id="num7">7</span>
+        <span id="num8">8</span>
+        <span id="num9">9</span>
+        <span id="plus" class="operator">+</span>
+        <span id="num4">4</span>
+        <span id="num5">5</span>
+        <span id="num6">6</span>
+        <span id="minus" class="operator">-</span>
+        <span id="num1">1</span>
+        <span id="num2">2</span>
+        <span id="num3">3</span>
+        <span id="divide" class="operator">÷</span>
+        <span id="num0">0</span>
+        <span>.</span>
+        <span id="equal" class="eval">=</span>
+        <span id="multiple" class="operator">x</span>
+    </div>
+</div>
+
+<!-- PrefixFree -->
+<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
 
 </body>
 </html>
