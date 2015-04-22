@@ -6,9 +6,9 @@ module.exports = function(grunt) {
   
   grunt.initConfig({
     uglify: {
-      my_target: {
+      uglify_options: {
     	  files: {
-    		  'min/min.js': ['src/calculator.js']
+    		  'min/min.js': ['src/*']
     	  }
       }
     },
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         files: ['src/calculator.js', 'Gruntfile.js'],
     },
 	
-	jasmine : {
+    jasmine : {
       src : 'src/**/*.js',
       options : {
         specs : 'spec/**/*.js'

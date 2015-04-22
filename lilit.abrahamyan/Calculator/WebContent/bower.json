@@ -1,0 +1,21 @@
+{
+  "name": "WebContent",
+  "version": "0.0.0",
+  "homepage": "https://github.com/synergytrainings/javascript-advanced",
+  "authors": [
+    "lilit-abrahamyan <lilit.abrahamyan@arm.synisys.com>"
+  ],
+  "description": "calculator project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.3"
+  }
+}
