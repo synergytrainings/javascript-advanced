@@ -15,5 +15,6 @@ OperatorEnum = {
 	 getResult : function(a,b,symbol) {
 		return this.getBySymbol(symbol).result(a,b);
 	 },
+    
 
 };
