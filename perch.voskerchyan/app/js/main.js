@@ -10,11 +10,11 @@ $(document).ready(function(){
 
 	$(".btn:not(.btn-success)").click(function(){
 		expression = input.val() + $(this).text();
-		$("#input").val(expression);
+		input.val(expression);
 	});
 
 	$(".btn-success").click(function(){
-		$("#input").val(calculate(expression));
+		input.val(calculate(expression));
 	});
 	
 });
