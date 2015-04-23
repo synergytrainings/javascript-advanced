@@ -35,7 +35,7 @@ grunt.initConfig({
 
 	// Jasmine
 	jasmine: {
-		src: ['app/js/*.js'],
+		src: ['bower_components/jquery/dist/jquery.js', 'app/js/*.js'],
 		options: {
 			specs: ['app/test/spec.js']
 		}
@@ -58,6 +58,6 @@ grunt.loadNpmTasks('grunt-contrib-jasmine');
 grunt.loadNpmTasks('grunt-wiredep');
 
 // Default tasks
-grunt.registerTask('default', ['csslint', 'htmlhintplus', 'jshint', 'uglify', 'jasmine']);
+grunt.registerTask('default', ['uglify']);
 
 };

@@ -1,34 +1,20 @@
-function calc(number1, number2, operator) {
-	var result;
-	
-	switch(operator) {
-		case '+':
-			result = number1 + number2;
-		break;
-
-		case '-':
-			result = number1 - number2;
-		break;
-
-		case '*':
-			result = number1 * number2;
-		break;
-
-		case '/':
-			result = number1 / number2;
-		break;
-	}
-
-	return result;
+function calculate(expression) {
+	return eval(expression);
 }
 
-var num1 = 9;
-var num2 = 8;
-var opr = '/';
-
-var result = calc(num1, num2, opr);
-var message = num1 + " " + opr + " " + num2 + " = " + result;
 
 $(document).ready(function(){
-	$(".result").text(message);
+
+	var input = $("#input");
+	var expression;
+
+	$(".btn:not(.btn-success)").click(function(){
+		expression = input.val() + $(this).text();
+		$("#input").val(expression);
+	});
+
+	$(".btn-success").click(function(){
+		$("#input").val(calculate(expression));
+	});
+	
 });
