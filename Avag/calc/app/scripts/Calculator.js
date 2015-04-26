@@ -1,5 +1,5 @@
 /* global define */
-define(['text!../tpl/Calculator.tpl.html','OperationType'],function(tpl, OperationType){
+define(['OperationType'],function(OperationType){
   'use strict';
 
   var Calculator = function(model,view){

@@ -16,6 +16,7 @@ Copy project to your directory and run this command in shell
 ```bash
 npm install
 bower install
+gulp
 ```
 
 #Run
