@@ -1,0 +1,29 @@
+body{
+  font-family: Helvetica, arial;
+  font-size:25px;
+}
+
+.container{
+  width: 200px;
+}
+.calc{
+  
+}
+.calc header{
+  font-size: 1.5em;
+}
+
+.calc .main{
+  margin: 0 auto;
+}
+
+.calc .main .btn{
+  width: 22%;
+}
+
+.calc .display {
+  padding: 5px; 
+}
+.calc .display.text-danger{
+  text-decoration: line-through;
+}
