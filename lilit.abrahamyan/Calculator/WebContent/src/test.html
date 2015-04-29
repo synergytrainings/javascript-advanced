@@ -2,26 +2,53 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Calculator</title>
+
 <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
 <link rel="stylesheet" href="css/styles.css">
 
-<script type="text/javascript" src="calculator.js"></script>
 <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="scripts/Model.js"></script>
+<script type="text/javascript" src="scripts/View.js"></script>
+<script type="text/javascript" src="scripts/Calculator.js"></script>
+<script type="text/javascript" src="scripts/Enums.js"></script>
+
 
 <script type="text/javascript">
 
 $(document).ready(function() {
-	com.synergy.jstraining.buildCalculator();
+	var calculator = new com.synergy.jstraining.calculator.Calculator();
+	calculator.init($('.main'));
+	
 });
 </script>
 </head>
 <body>
-<div class="container">
-  <div colspan="4" class="row">
- 	 <input id="result" class="col-sm-8"></input>
-  </div></div>
+<div class="main">
+  <div class="screen-panel">
+	<div class="screen"><input id="result"></div>
+  </div>
+  <div class="row">
+	<span class="col-sm-3" data-key-value="1">1</span>
+	<span class="col-sm-3" data-key-value="2">2</span>
+	<span class="col-sm-3" data-key-value="3">3</span>
+	<span class="col-sm-3" data-key-value="+">+</span>
+	<span class="col-sm-3" data-key-value="4">4</span>
+	<span class="col-sm-3" data-key-value="5">5</span>
+	<span class="col-sm-3" data-key-value="6">6</span>
+	<span class="col-sm-3" data-key-value="-">-</span>
+	<span class="col-sm-3" data-key-value="7">7</span>
+	<span class="col-sm-3" data-key-value="8">8</span>
+	<span class="col-sm-3" data-key-value="9">9</span>
+	<span class="col-sm-3" data-key-value="*">*</span>
+	<span class="col-sm-3" data-key-value="0">0</span>
+	<span class="col-sm-3" data-key-value="C">C</span>
+	<span class="col-sm-3" data-key-value="=">=</span>
+	<span class="col-sm-3" data-key-value="/">/</span>
+  </div>
+ </div>
 </body>
 </html>
