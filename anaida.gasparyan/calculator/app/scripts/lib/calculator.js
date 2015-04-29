@@ -1,4 +1,5 @@
-define('calculator', [], function () {
+define([], function () {
+	"use strict";
 
 	var Operator = Object.freeze({
 		ADD : '+', 
@@ -26,7 +27,7 @@ define('calculator', [], function () {
 			case Operator.DIVIDE:
 				return operand1 / operand2;
 			default:
-				throw 'Unknown operator ' + operator;
+				throw 'Unsupported operator ' + operator;
 		}
     }
 

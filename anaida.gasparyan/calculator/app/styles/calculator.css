@@ -1,5 +1,5 @@
-.calculator {
-	width: 450px;
+.calculator-container {
+	width: 400px;
 	padding-top: 100px;
 }
 
@@ -12,6 +12,6 @@
 	margin: 5px 0 5px 0;
 }
 
-.calculator .btn-primary.active {
+.calculator .active {
 	border-color: #F06B0C;
 }
