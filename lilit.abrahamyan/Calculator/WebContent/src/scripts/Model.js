@@ -152,4 +152,4 @@ com.synergy.jstraining.calculator.model.Model.prototype = {
 		}
 		return result;
 	}
-}
+};

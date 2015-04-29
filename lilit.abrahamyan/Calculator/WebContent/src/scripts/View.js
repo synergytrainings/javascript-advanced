@@ -44,4 +44,4 @@ com.synergy.jstraining.calculator.view.View.prototype = {
 	redraw : function(result){
 		$('#result', this.container).val(result);
 	}
-}
+};

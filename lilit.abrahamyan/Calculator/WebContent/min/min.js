@@ -1,1 +1,0 @@
-function calculate(a,b,c){var d;switch(c){case"+":d=a+b;break;case"-":d=a-b;break;case"*":d=a*b;break;case"/":d=a/b;break;default:throw"Unsupported operation."}return d}
