@@ -288,5 +288,5 @@ module.exports = function(grunt) {
     'connect:dist'
   ]);
 
-  // TODO use rev
+  // TODO use rev, grunt-autoprefixer
 };
