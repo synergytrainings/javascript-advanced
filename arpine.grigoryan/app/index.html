@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body class="body myDiv">
+    
+    <div class="calculator_background">
+      <div>
+          <div>
+              <input type="text" readonly  id = "calculator_display" class = "calculator_display">
+          </div>
+          <div class="buttons">
+              <div id="FirstRow" class= "buttons_row" >
+                  <span class="button_style js_op" id = "C">C</span>
+                  <span class="button_style js_op" id = "+/-">+/-</span>
+                  <span class="button_style js_op" id = "/">/</span>
+                  <span class="button_style js_op" id = "*">*</span>
+              </div>
+              <div id="SecondRow" class = "buttons_row">
+                  <span class="button_style js_num" id = "7">7</span>
+                  <span class="button_style js_num" id = "8">8</span>
+                  <span class="button_style js_num" id = "9">9</span>
+                  <span class="button_style js_op" id = "-">-</span>
+              </div>
+              <div id="FirdRow" class= "buttons_row">
+                  <span class="button_style js_num" id = "4">4</span>
+                  <span class="button_style js_num" id = "5">5</span>
+                  <span class="button_style js_num" id = "6">6</span>
+                  <span class="button_style js_op" id = "+">+</span>
+              </div>
+              <div id = "Fourth-Fifth" class = "buttons_row fourth_fifth">
+                  <div class= "fourth">
+                      <span class="button_style js_num" id = "1">1</span>
+                      <span class="button_style js_num" id = "2">2</span>
+                      <span class="button_style js_num" id = "3">3</span>
+                  
+                  </div>
+                 
+                  <div class= "fifth">
+                      <span class="button_style js_num w84 js_num" id = "0">0</span>
+                      <span class="button_style js_num" id = ".">.</span>
+                  </div>
+             </div>
+              <div  class= "e_button">
+                  <span class="button_style js_op h84" id = "=">=</span>
+              </div>
+              
+          </div>
+          
+      </div>
+    </div>
+    
+    
+</div>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    
+<!--    <script src="minify/output.min.js"></script>-->
+    <script src="scripts/enums/ButtonType.js"></script>
+    <script src="scripts/views/Button.js"></script>
+    <script src="scripts/enums/OperetionType.js"></script>
+    <script src="scripts/models/CalculatorModel.js"></script>
+    <script src="scripts/views/CalculatorView.js"></script>
+    <script src="scripts/viewModel/CalculatorModelView.js"></script>
+    <script src="scripts/viewModel/App.js"></script>
+
+</body>
+</html>

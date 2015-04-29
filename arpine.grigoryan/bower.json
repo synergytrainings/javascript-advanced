@@ -2,7 +2,7 @@
   "name": "calculator",
   "version": "0.0.1",
   "authors": [
-    "Arpine Grigoryan"
+    "Arpine"
   ],
   "description": "aritmetical actions",
   "main": "index.html",
@@ -17,5 +17,8 @@
   ],
   "dependencies": {
     "font-awesome": "~4.3.0"
+  },
+  "devDependencies": {
+    "jquery-ui": "~1.11.4"
   }
 }

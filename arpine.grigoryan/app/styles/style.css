@@ -1,0 +1,103 @@
+html {
+    height: 100%
+}
+body
+{
+    background: radial-gradient(#4B4B4B,#2c2d30);
+    
+}
+
+.myDiv{
+/*    background:url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXxvZSoAAAAAElFTkSuQmCC*/
+/*    */
+/*    ) repeat;*/
+}
+
+
+
+.calculator_background
+{
+background:linear-gradient(#FEA34F, #c3734A);
+    height:301px;
+    width:208px;
+    border-radius:10px;
+    position:relative;
+ 
+}
+
+.buttons_row {
+    padding: 3px 3px;
+}
+
+.fourth_fifth{
+   width: 138px;
+   height: 90px;
+   float:left;
+
+}
+.fourth {
+width: 135px;
+height: 45px;
+}
+
+.fifth{
+width: 184px;
+height: 20px;
+bottom: 0px;
+}
+
+.e_button{
+width: 49px;height: 93px;
+float:left;;
+}
+
+.calculator_display
+{
+    background:linear-gradient(#B3DAEF, #A6D5F0);
+    height : 41px;
+    width:188px;
+    border-radius: 14px;
+	border: 1px solid #c3c3c3;
+    text-align:right;
+    margin: 7px 7px;
+}
+.buttons
+{
+/*    padding: 14px;*/
+   background-color: #ADA8A8;
+   position: absolute;
+   width:193px;
+   margin: 1px 7px;
+   border-radius: 14px;
+   border: 1px  #ADA8A8;
+   background: linear-gradient(lightgrey, darkgray);
+   
+}
+.button_style{
+    background-color:#F4F4F4;
+	-webkit-border-radius:40px;
+	border-radius:40px;
+	border:1px solid #E4E2E2;
+	display:inline-block;
+	cursor:pointer;
+	color:#BCBCBC;
+	font-family:arial;
+	font-size:17px;
+    width: 40px;
+    height: 37px;
+    line-height: 37px;
+	text-decoration:none;
+	text-align: center
+    
+}
+
+
+
+.w84{
+width:80px;
+}
+
+.h84{
+    height:84px;
+	line-height: 84px;
+}
