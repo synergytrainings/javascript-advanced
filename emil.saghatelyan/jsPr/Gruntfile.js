@@ -4,14 +4,14 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
       uglify: {
-          my_target: {
+          target: {
               files: {
-                  'src/scripts/min.js': ['src/scripts/calculator.js']
+                  'src/scripts/min.js': ['src/scripts/*.js']
               }
           }
       },
       jshint: {
-          files: ['src/scripts/calculator.js']
+          files: ['src/scripts/*.js']
       },
       jasmine: {
           test: {
@@ -28,9 +28,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('uglify', ['uglify']);
 
 };
