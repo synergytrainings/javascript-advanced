@@ -7,7 +7,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-karma');
+
   grunt.initConfig({
     uglify: {
       uglify_options: {
@@ -16,8 +20,15 @@ module.exports = function(grunt) {
     	  }
       }
     },
+
     jshint: {
         files: ['src/scripts/*.js', 'Gruntfile.js'],
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
     },
 	
     jasmine : {
@@ -41,10 +52,18 @@ module.exports = function(grunt) {
     copy: {
  	build: {
   		cwd: 'src',
-    		src: [ '**', '**/**/*.css', '**/**/**/min.js', '*.html' ],
+    		src: [ '**', '**/**/*.css', '**/**/**/concat.js', '*.html' ],
     		dest: 'build',
     		expand: true
-  		}
+  	},
+     },
+
+
+     cssmin: {
+	minify: {
+    		src: 'src/css/styles.css',
+    		dest: 'path-to/default.min.css'
+  	}
      },
 
      connect: {
@@ -66,22 +85,40 @@ module.exports = function(grunt) {
     clean: {
       all: {
         files: [{
-          src: [
-            'build'
-          ]
+          src: 'build'
         }]
       }
     },
+
+    useminPrepare: {
+ 	 html: 'src/test.html',
+    },
+
+    usemin: {
+ 	 html: 'src/test.html',
+    },
+
+    concat: {
+      default_options: {
+        files: {
+          'src/scripts/concat/concat.js': ['src/scripts/min/min.js', 'bower_components/jquery/dist/jquery.js', 'bower_components/bootstrap/dist/js/bootstrap.js'],
+          'src/scripts/concat/concat.css': ['src/css/styles.css', 'bower_components/bootstrap/dist/css/bootstrap.min.css', 'bower_components/bootstrap/dist/css/bootstrap-theme.css']
+	}
+      }
+    }
 
   });
 
   grunt.registerTask('default', [ 'build', 'connect', 'watch' ]);
 
   grunt.registerTask('build', [
+    'useminPrepare',
     'clean:all',
-    'copy',
     'uglify',
+    'concat',
     'jasmine',
+    'usemin',
+    'copy',
     'connect'
    ]);
 
