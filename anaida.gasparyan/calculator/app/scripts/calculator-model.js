@@ -12,7 +12,7 @@ define(['lib/calculator', 'OperationType'], function (calculator, OperationType)
 
 		updateNumber: function (value) { 
 			this.setCurrentValue(this.resetCurrValue ? value : (this.currValue + value));
-			this.setResetCurrValue(false)
+			this.setResetCurrValue(false);
 		},
 
 		updateOperator: function (value) {

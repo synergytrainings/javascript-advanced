@@ -15,3 +15,8 @@
 .calculator .active {
 	border-color: #F06B0C;
 }
+
+/* for autoprefixer test */
+a {
+  transition: transform 1s
+}

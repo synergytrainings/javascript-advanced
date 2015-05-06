@@ -1,8 +1,5 @@
 requirejs.config({
-    baseUrl: 'scripts'//,
-    // paths: {
-    //     jquery: '../bower_components/jquery/dist/jquery'
-    // }
+    baseUrl: 'scripts'
 });
 
 require(['calculator-view'], function(View) {
