@@ -91,11 +91,11 @@ module.exports = function(grunt) {
     },
 
     useminPrepare: {
- 	 html: 'src/test.html',
+ 	 html: 'build/test.html',
     },
 
     usemin: {
- 	 html: 'src/test.html',
+ 	 html: 'build/test.html',
     },
 
     concat: {
@@ -112,13 +112,13 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [ 'build', 'connect', 'watch' ]);
 
   grunt.registerTask('build', [
-    'useminPrepare',
     'clean:all',
     'uglify',
     'concat',
     'jasmine',
-    'usemin',
     'copy',
+    'useminPrepare',
+    'usemin',
     'connect'
    ]);
 
