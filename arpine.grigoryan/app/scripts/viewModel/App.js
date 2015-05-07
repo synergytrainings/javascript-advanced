@@ -13,7 +13,7 @@ var App = {};
 App.init = function(){
     
     var model = new com.training.models.CalculatorModel();
-    var view = new com.training.views.CalculatorView(modelView);
+    var view = new com.training.views.CalculatorView();
     
     var modelView = new com.training.app.CalculatorModelView(model, view);
 

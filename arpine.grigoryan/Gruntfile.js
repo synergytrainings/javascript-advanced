@@ -86,6 +86,36 @@ grunt.initConfig({
             dest: '<%= config.app%>/concat/enums.js',
         },
     },
+    connect: {
+        server: {
+            options: {
+                 port: 8900,
+                 open: {
+                    target: 'http://localhost:8900/index.html'
+                 },
+                 livereload: false,
+                 hostname: '127.0.0.1',
+                 protocol: 'http',
+                 base: 'app',
+                 keepalive: true,
+                 middleware: function(connect) {
+                 return [
+                         connect.static('app'),
+                         connect().use('/bower_components', connect.static('./bower_components')),
+                         connect.static(config.app)
+                         ];
+                 }
+            },
+                 
+                 
+        }
+    },
+                 
+    karma: {
+        unit: {
+                 configFile: 'karma.config.js',
+        }
+    },
 
 //	jasmine: {
 //		src: '<%= config.scripts%>/OperetionType.js',
@@ -114,11 +144,12 @@ grunt.initConfig({
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-//  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   
   grunt.registerTask('min', [
                                 'uglify',
@@ -127,10 +158,15 @@ grunt.initConfig({
                                 'cssmin',
                                 'concat'
                                 ]);
+    grunt.registerTask('tests', [
+                                'karma'
+                                ]);
     
     grunt.registerTask('default', [
                                    'min',
+                                   'tests',
                                    'jshint',
+                                   'connect',
 //                                   'watch'
                                    ]);
     
