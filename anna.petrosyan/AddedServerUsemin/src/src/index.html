@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Javascript Calculator</title>
+    <!-- build:css style/main.min.css -->
+    <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="style/main.css" />
+    <!-- endbuild -->
+
+    </head>
+    <table class="calculator" id="calc">
+        <tr>
+            <td colspan="4" class="calc_td_result">
+                <input type="text" readonly="readonly" name="calc_result" id="calc_result" data-key="calc_result" class="calc_result"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="CE" id="ce" data-key="ce"  />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="&larr;" id="backspace"  data-key="backspace" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="%" id="percentage"  disabled="disabled" data-key="percentage"/>
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="+" id="sum" data-key="sum" />
+            </td>
+        </tr>
+        <tr>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="7" id="seven" data-key="seven" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="8" id="eight" data-key="eight" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="9" id="nine" data-key="nine" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="-" id="substract" data-key="substract" />
+            </td>
+        </tr>
+        <tr>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="4" id="four" data-key="four"/>
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="5" id="five" data-key="five" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="6" id="six"  data-key="six"/>
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="x" id="multiply" data-key="multiply"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="1" id="one" data-key="one"  />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="2" id="two" data-key="two" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="3" id="three" data-key="three" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="&divide;" id="divide" data-key="divide" />
+            </td>
+        </tr>
+        <tr>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="0" id="zero" data-key="zero" />
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="&plusmn;" id="sign" disabled="disabled" data-key="sign"/>
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="," id="floatingPoint" disabled="disabled" data-key="floatPoint"/>
+            </td>
+            <td class="calc_td_btn">
+                <input type="button" class="calc_btn" value="=" id="equals" data-key="equals"  />
+            </td>
+        </tr>
+    </table>
+    <!-- build:js scripts/concat/concat.js -->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+    <script type="text/javascript" src="scripts/main.js" ></script>
+    <!-- endbuild -->
+    </body>
+    </html>
