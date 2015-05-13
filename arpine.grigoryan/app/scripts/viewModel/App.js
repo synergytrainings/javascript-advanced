@@ -1,5 +1,5 @@
 
-var com = typeof com === "undefined" ? {}:com;
+/*var com = typeof com === "undefined" ? {}:com;
 com.training = com.training || {};
 com.training.app = com.training.app || {};
 com.training.models = com.training.models || {};
@@ -25,4 +25,27 @@ App.init = function(){
     
 };
 
-App.init();
+App.init();*/
+
+define(['models/CalculatorModel',
+        'views/CalculatorView',
+        'viewModel/CalculatorModelView'],
+       function(CalculatorModel,CalculatorView, CalculatorModelView){
+       var App = {};
+       
+       
+       App.init = function(){
+       
+       var model = new CalculatorModel();
+       var view = new CalculatorView();
+       
+       var modelView = new CalculatorModelView(model, view);
+       
+       
+       
+       view.setModelView(modelView);
+       };
+       
+       return App;
+       
+       })

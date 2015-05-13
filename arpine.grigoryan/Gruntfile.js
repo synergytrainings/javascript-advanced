@@ -41,7 +41,7 @@ grunt.initConfig({
 
 		result: {
 		  files: {
-			'<%= config.app%>/minify/output.min.js': ['<%= config.scripts%>/**/*.js']
+			'<%= config.app%>/minify/scripts/output.min.js': ['<%= config.scripts%>/**/*.js']
 			}
 		}
   	},
@@ -49,7 +49,7 @@ grunt.initConfig({
     cssmin: {
         css:{
             src: '<%= config.app%>/styles/style.css',
-            dest:'<%= config.app%>/minify/concat.min.css'
+            dest:'<%= config.app%>/minify/styles/concat.min.css'
         }
     },
                  
@@ -82,7 +82,7 @@ grunt.initConfig({
     concat: {
         dist: {
             src: ['<%= config.scripts%>/enums/ButtonType.js',
-                  '<%= config.scripts%>/enums/OPeretionTYpe.js'],
+                  '<%= config.scripts%>/enums/OperetionType.js'],
             dest: '<%= config.app%>/concat/enums.js',
         },
     },
@@ -114,6 +114,17 @@ grunt.initConfig({
     karma: {
         unit: {
                  configFile: 'karma.config.js',
+        }
+    },
+    
+    requirejs: {
+        compile: {
+            options: {
+                 baseUrl: '<%= config.scripts%>',
+                 mainConfigFile: '<%= config.scripts%>/main.js',
+                 name: 'main', // assumes a production build using almond
+                 out: '<%= config.app%>/minify/scripts/app.min.js'
+            }
         }
     },
 
@@ -150,6 +161,7 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   
   grunt.registerTask('min', [
                                 'uglify',
@@ -167,6 +179,7 @@ grunt.initConfig({
                                    'tests',
                                    'jshint',
                                    'connect',
+                                   'requirejs',
 //                                   'watch'
                                    ]);
     

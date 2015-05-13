@@ -55,16 +55,13 @@
 </div>
 
     </div>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- build:js(.) scripts/vendor.min.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
+    <!-- endbuild -->
     
-<!--    <script src="minify/output.min.js"></script>-->
-    <script src="scripts/enums/ButtonType.js"></script>
-    <script src="scripts/views/Button.js"></script>
-    <script src="scripts/enums/OperetionType.js"></script>
-    <script src="scripts/models/CalculatorModel.js"></script>
-    <script src="scripts/views/CalculatorView.js"></script>
-    <script src="scripts/viewModel/CalculatorModelView.js"></script>
-    <script src="scripts/viewModel/App.js"></script>
-
+    <!-- build:js(.) scripts/app.min.js -->
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
