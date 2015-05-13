@@ -1,1 +1,0 @@
-function calculate(a,b,c){"use strict";switch(c){case"+":return parseFloat(a)+parseFloat(b);case"-":return parseFloat(a)-parseFloat(b);case"*":return parseFloat(a)*parseFloat(b);case"/":return parseFloat(a)/parseFloat(b);default:throw new Error("Invalid operator"+c)}}
