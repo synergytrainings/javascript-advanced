@@ -1,34 +1,10 @@
-/**
- * @namespace
- */
-var com = com || {};
-/**
- * @namespace
- */
-com.synergy = com.synergy || {};
-/**
- * @namespace
- */
-com.synergy.jstraining = com.synergy.jstraining || {};
-/**
- * @namespace
- */
-com.synergy.jstraining.calculator = com.synergy.jstraining.calculator || {};
+define('View', function(){
+  var View = function() {
+	this.container;
+	this.changeListener;
+  };
 
-/**
- * @namespace
- */
-com.synergy.jstraining.calculator.view = com.synergy.jstraining.calculator.view || {};
-
-/**
- * JS view model for calculator implementation
- */
-com.synergy.jstraining.calculator.view.View = function() {
-	var container;
-	var changeListener;
-};
-
-com.synergy.jstraining.calculator.view.View.prototype = {
+  View.prototype = {
 	init : function(container){
 		this.container = container;
 		var t  = this;
@@ -44,4 +20,6 @@ com.synergy.jstraining.calculator.view.View.prototype = {
 	redraw : function(result){
 		$('#result', this.container).val(result);
 	}
-};
+   };
+   return View; 
+});

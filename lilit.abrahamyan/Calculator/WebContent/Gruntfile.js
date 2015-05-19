@@ -10,7 +10,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-usemin');
-  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     uglify: {
@@ -34,8 +33,8 @@ module.exports = function(grunt) {
     jasmine : {
       src : 'src/**/*.js',
       options : {
-        specs : 'spec/**/*.js'
-      }
+			specs : 'spec/**/*.js',
+		  }
     },
 
     watch: {
@@ -52,7 +51,7 @@ module.exports = function(grunt) {
     copy: {
  	build: {
   		cwd: 'src',
-    		src: [ '**', '**/**/*.css', '**/**/**/concat.js', '*.html' ],
+    		src: [ '**/**/*.css', '**/**/**/concat.js', '*.html' ],
     		dest: 'build',
     		expand: true
   	},
@@ -60,10 +59,10 @@ module.exports = function(grunt) {
 
 
      cssmin: {
-	minify: {
-    		src: 'src/css/styles.css',
-    		dest: 'path-to/default.min.css'
-  	}
+		minify: {
+    		src:'src/css/styles.css',
+    		dest: 'src/css/min/styles.css'
+		}
      },
 
      connect: {
@@ -89,6 +88,17 @@ module.exports = function(grunt) {
         }]
       }
     },
+	
+  /*requirejs: {
+      dist: {
+        options: {
+            baseUrl: 'src/scripts',
+            optimize: 'uglify',
+            name: 'main',
+            mainConfigFile: 'src/scripts/main.js'
+        }
+      }
+    },*/
 
     useminPrepare: {
  	 html: 'build/test.html',
@@ -101,8 +111,8 @@ module.exports = function(grunt) {
     concat: {
       default_options: {
         files: {
-          'src/scripts/concat/concat.js': ['src/scripts/min/min.js', 'bower_components/jquery/dist/jquery.js', 'bower_components/bootstrap/dist/js/bootstrap.js'],
-          'src/scripts/concat/concat.css': ['src/css/styles.css', 'bower_components/bootstrap/dist/css/bootstrap.min.css', 'bower_components/bootstrap/dist/css/bootstrap-theme.css']
+          'src/scripts/concat/concat.js': ['node_modules/requirejs/require.js', 'src/scripts/min/min.js', 'bower_components/jquery/dist/jquery.js', 'bower_components/bootstrap/dist/js/bootstrap.js'],
+          'src/scripts/concat/concat.css': ['src/css/min/styles.css', 'bower_components/bootstrap/dist/css/bootstrap.min.css', 'bower_components/bootstrap/dist/css/bootstrap-theme.css']
 	}
       }
     }
@@ -114,8 +124,10 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:all',
     'uglify',
+  //  'requirejs',
+    'cssmin',
     'concat',
-    'jasmine',
+ //   'jasmine',
     'copy',
     'useminPrepare',
     'usemin',

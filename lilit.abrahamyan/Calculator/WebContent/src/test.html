@@ -10,20 +10,10 @@
 <link rel="stylesheet" href="css/styles.css">
 <!-- endbuild -->
 
-<!-- build:js scripts/concat/concat.js -->
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="scripts/min/min.js"></script>
-<!-- endbuild -->
-
 <script type="text/javascript">
 
-$(document).ready(function() {
-	var calculator = new com.synergy.jstraining.calculator.Calculator();
-	calculator.init($('.main'));
-	
-});
 </script>
+
 </head>
 <body>
 <div class="main">
@@ -49,5 +39,14 @@ $(document).ready(function() {
 	<span class="col-sm-3" data-key-value="/">/</span>
   </div>
  </div>
+
+<!-- build:js scripts/concat/concat.js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../node_modules/requirejs/require.js"></script>
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+
 </body>
 </html>

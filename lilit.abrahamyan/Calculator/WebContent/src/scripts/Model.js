@@ -1,37 +1,14 @@
-/**
- * @namespace
- */
-var com = com || {};
-/**
- * @namespace
- */
-com.synergy = com.synergy || {};
-/**
- * @namespace
- */
-com.synergy.jstraining = com.synergy.jstraining || {};
-/**
- * @namespace
- */
-com.synergy.jstraining.calculator = com.synergy.jstraining.calculator || {};
+define('Model',['Enums'],function (Enums){
 
-/**
- * @namespace
- */
-com.synergy.jstraining.calculator.model = com.synergy.jstraining.calculator.model || {};
+   var Model = function() {
+	this.operand1;
+	this.operand2;
+	this.operation;
+	this.result = 0;
+	this.changeListener;
+   };
 
-/**
- * JS model for calculator implementation
- */
-com.synergy.jstraining.calculator.model.Model = function() {
-	var operand1;
-	var operand2;
-	var operation;
-	var result = 0;
-	var changeListener;
-};
-
-com.synergy.jstraining.calculator.model.Model.prototype = {
+   Model.prototype = {
 	init : function(){
 		
 	},
@@ -50,7 +27,7 @@ com.synergy.jstraining.calculator.model.Model.prototype = {
 	},
 	
 	isOperation : function(keyValue){
-		var operations = com.synergy.jstraining.calculator.enums.Operations;
+		var operations = Enums.Operations;
 		for (var key in operations) {
 			if (operations[key] === keyValue) {
 				return true;
@@ -60,7 +37,7 @@ com.synergy.jstraining.calculator.model.Model.prototype = {
 	},
 	
 	operatorEntered : function(keyValue){
-		var operator = com.synergy.jstraining.calculator.enums.Operations;
+		var operator = Enums.Operations;
 		switch (keyValue) {
 			case operator.EQUALS: 
 				if (this.operand1 && this.operand2 && this.operator) {
@@ -152,4 +129,6 @@ com.synergy.jstraining.calculator.model.Model.prototype = {
 		}
 		return result;
 	}
-};
+   };
+   return Model;
+});

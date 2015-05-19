@@ -1,11 +1,8 @@
 // Karma configuration
-// Generated on Thu May 07 2015 00:19:44 GMT+0400 (Caucasus Standard Time)
-
-
+// Generated on Tue May 19 2015 12:19:05 GMT+0400 (Caucasus Standard Time)
 
 module.exports = function(config) {
-  
-	config.set({
+  config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -13,13 +10,16 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'spec/*.js'
-, 'src/**/*.js'    ],
+      'spec/test-main.js', 
+	  'node_modules/requirejs/require.js', 
+	  {pattern: 'spec/*.js', included: false},
+	  {pattern: 'src/scripts/**/*.js', included: false}
+    ],
 
 
     // list of files to exclude
