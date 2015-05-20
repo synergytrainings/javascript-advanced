@@ -1,0 +1,12 @@
+.calculator-container {
+	padding: 100px;
+}
+
+.table-container {
+	padding: 50px;
+}
+
+/* for autoprefixer test */
+a {
+  transition: transform 1s
+}

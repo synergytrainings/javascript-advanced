@@ -1,4 +1,4 @@
-define(['lib/calculator', 'OperationType'], function (calculator, OperationType) {
+define(['calc/calculator', 'calc/OperationType'], function (calculator, OperationType) {
 	"use strict";
 
 	function Model() {

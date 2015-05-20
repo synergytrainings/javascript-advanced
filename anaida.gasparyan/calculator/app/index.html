@@ -12,20 +12,28 @@
 		<!-- endbuild -->
 
 		<!-- build:css(.tmp) styles/app.css -->
-		<link type="text/css" rel="stylesheet" href="styles/calculator.css"/>
+		<link type="text/css" rel="stylesheet" href="styles/style.css"/>
+		<link type="text/css" rel="stylesheet" href="calculator/styles/style.css"/>
+		<link type="text/css" rel="stylesheet" href="table/styles/style.css"/>
 		<!-- endbuild -->
 	</head>
 	<body>
-		<div id="calc1" data-component='calculator' class="calculator-container container"></div>
-
-		<div id="calc2" data-component='calculator' class="calculator-container container"></div>
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-6 calculator-container" data-component='calculator'></div>
+			  <div class="col-md-6 table-container" data-component='table'></div>
+			</div>
+		</div>
 
 		<!-- build:js(.) scripts/vendor.min.js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquery.editable/jquery.editable.js"></script>
 		<script src="bower_components/requirejs/require.js"></script>
+		<script src="bower_components/bootstrap/js/modal.js"></script>
 		<!-- endbuild -->
 
 		<!-- build:js(.) scripts/app.min.js -->
+		<script type="text/javascript" src="scripts/requirejs-config.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
 		<!-- endbuild -->
 	</body>

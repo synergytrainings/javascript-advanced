@@ -1,9 +1,14 @@
-define(['calculator-model', 'OperationType'], function(Model, OperationType) {
+define(['text!../../calculator/templates/calculator.tpl.html', 'calc/model', 'calc/OperationType'], function(tpl, Model, OperationType) {
     "use strict";
     
     function View ($containerEl) {
+        this.element = $(tpl);
         this.model = new Model();
-        this.element = $containerEl;
+
+        this.bindEvents();
+        this.updateResult();
+
+        $containerEl.append(this.element);
     }
 
     View.prototype =  {
@@ -61,14 +66,6 @@ define(['calculator-model', 'OperationType'], function(Model, OperationType) {
                 $el.addClass('active');
             }
             $("[data-btn-type='result']", this.element).text(this.model.getDisplayResult());
-        },
-
-        /**
-         * Initializes calculator
-         */
-        init: function() {
-            this.bindEvents();
-            this.updateResult();
         }
     };
 

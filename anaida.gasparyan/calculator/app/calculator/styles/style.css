@@ -1,8 +1,3 @@
-.calculator-container {
-	width: 400px;
-	padding-top: 100px;
-}
-
 .calculator .result {
 	text-align: right;
 	font-weight: bold;
@@ -14,9 +9,4 @@
 
 .calculator .active {
 	border-color: #F06B0C;
-}
-
-/* for autoprefixer test */
-a {
-  transition: transform 1s
 }
