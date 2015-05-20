@@ -1,7 +1,7 @@
 requirejs.config({
-    baseUrl: 'scripts'
+    baseUrl: 'scripts/table'
 });
 
-requirejs(['Calculator'],function(Calculator){
-    Calculator.init($('.main'));
+requirejs(['ProjectTable'], function(ProjectTable){
+	ProjectTable.init($('#table'));
 });

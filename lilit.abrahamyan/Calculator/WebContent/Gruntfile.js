@@ -15,13 +15,13 @@ module.exports = function(grunt) {
     uglify: {
       uglify_options: {
     	  files: {
-    		  'src/scripts/min/min.js': ['src/scripts/*.js']
+    		  'src/scripts/min/min.js': ['src/scripts/calculator/*.js', 'src/scripts/table/*.js', 'src/scripts/main.js']
     	  }
       }
     },
 
     jshint: {
-        files: ['src/scripts/*.js', 'Gruntfile.js'],
+        files: ['src/scripts/**/*.js', 'Gruntfile.js'],
     },
 
     karma: {
@@ -31,10 +31,11 @@ module.exports = function(grunt) {
     },
 	
     jasmine : {
-      src : 'src/**/*.js',
-      options : {
-			specs : 'spec/**/*.js',
-		  }
+      src : 'src/scripts/**/*.js',
+	  specs : 'spec/test.js',
+	  helpers: [
+                'node_modules/requirejs/require.js'
+            ]
     },
 
     watch: {
@@ -49,12 +50,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
- 	build: {
-  		cwd: 'src',
-    		src: [ '**/**/*.css', '**/**/**/concat.js', '*.html' ],
-    		dest: 'build',
-    		expand: true
-  	},
+		build: {
+			cwd: 'src',
+				src: [ '**/**/*.css', '**/**/**/concat.js', '*.html' ],
+				dest: 'build',
+				expand: true
+		},
      },
 
 
@@ -66,19 +67,19 @@ module.exports = function(grunt) {
      },
 
      connect: {
-  	server: {
-  	  options: {
-   	  	port: 8081,
-          	open: {
+		server: {
+			options: {
+				port: 8081,
+					open: {
                      target: 'http://localhost:8081/test.html'
             	},
-          	keepalive: true,
-          	livereload: false,
-          	hostname: '127.0.0.1',
-		protocol: 'http',
-		base: 'build'
+				keepalive: true,
+				livereload: false,
+				hostname: '127.0.0.1',
+				protocol: 'http',
+				base: 'build'
        	    }
-	}
+		}
      },
 
     clean: {
@@ -120,7 +121,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [ 'build', 'connect', 'watch' ]);
-
+  
   grunt.registerTask('build', [
     'clean:all',
     'uglify',
