@@ -1,0 +1,11 @@
+{
+  "name": "perch",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.17",
+    "requirejs-text": "~2.0.14"
+  }
+}
