@@ -5,10 +5,12 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Javascript Calculator</title>
-    <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="../style/main.css" />
+    <!-- build:css style/main.min.css -->
+    <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="style/main.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
 
     </head>
-    <body>
     <table class="calculator" id="calc">
         <tr>
             <td colspan="4" class="calc_td_result">
@@ -86,10 +88,24 @@
             </td>
         </tr>
     </table>
-    <script type="text/javascript" src="../libs/require.js"></script>
-    <script type="text/javascript" src="../libs/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"/>-->
-    <!--<script type="text/javascript" src="../../bower_components/requirejs/require.js"/>-->
-    <script type="text/javascript" src="../scripts/compressed/min.js" ></script>
+    <!-- build:js scripts/concat/concat.js -->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/requirejs/require.js"></script>
+    <!--<script type="text/javascript" src="scripts/main.js" ></script>-->
+
+    <!-- endbuild -->
+<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/table/TableMain.js" ></script>
+
+<table  class="table table-striped table-bordered" data-field="container"id="tableContainer">
+
+
+
+</table>
+
+<input type="text" data-field="projectIdInput"/>
+<input type="text" data-field="projectNameInput"/>
+<input type="text" data-field="projectCostInput"/>
+<input type="button" data-field="projectAddonButton" value="Add Project">
     </body>
     </html>
