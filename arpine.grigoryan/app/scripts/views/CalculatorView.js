@@ -81,7 +81,7 @@ define(['views/Button', 'enums/ButtonType'],
                           t.modelView.changeState(t.button);
                           });
        
-       }
+       };
        return CalculatorView;
        
        });

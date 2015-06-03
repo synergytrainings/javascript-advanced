@@ -49,7 +49,7 @@ define(['enums/OperetionType'],
        return this.value + "";
        };
        
-       }
+       };
        return Button;
        
        });

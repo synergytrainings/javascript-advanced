@@ -13,4 +13,4 @@ define(function(){
        OPERATOR : 1
     };
     return ButtonType;
-})
+});
