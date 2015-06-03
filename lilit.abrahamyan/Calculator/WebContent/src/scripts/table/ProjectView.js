@@ -1,4 +1,4 @@
-define('ProjectView', ['Project'], function(Project){
+define('table/ProjectView', ['table/Project'], function(Project){
   var ProjectView = function() {
 	this.project;
 	this.editMode;

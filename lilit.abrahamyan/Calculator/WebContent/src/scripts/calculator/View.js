@@ -1,4 +1,4 @@
-define('View', function(){
+define('calculator/View', function(){
   var View = function() {
 	this.container;
 	this.changeListener;

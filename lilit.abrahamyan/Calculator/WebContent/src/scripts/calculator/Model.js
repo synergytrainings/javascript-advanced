@@ -1,4 +1,4 @@
-define('Model',['Enums'],function (Enums){
+define('calculator/Model',['calculator/Enums'],function (Enums){
 
    var Model = function() {
 	this.operand1;

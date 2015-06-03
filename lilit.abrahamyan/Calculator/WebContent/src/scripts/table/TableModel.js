@@ -1,4 +1,4 @@
-define('TableModel', function (){
+define('table/TableModel', function (){
 
    var TableModel = function() {
 	this.projects;

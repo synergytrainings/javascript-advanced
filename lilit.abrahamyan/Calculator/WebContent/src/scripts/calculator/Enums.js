@@ -1,4 +1,4 @@
-define('Enums', function(){
+define('calculator/Enums', function(){
   var Enums = {
 	Operations : {
 	  PLUS : '+',

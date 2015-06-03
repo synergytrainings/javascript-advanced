@@ -1,4 +1,4 @@
-define('TableView', ['ProjectView'], function(ProjectView){
+define('table/TableView', ['table/ProjectView'], function(ProjectView){
   var TableView = function() {
 	this.container;
 	this.nameColumn;

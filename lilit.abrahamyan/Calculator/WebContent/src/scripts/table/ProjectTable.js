@@ -1,4 +1,4 @@
-define('ProjectTable',['TableModel', 'TableView', 'Project'],
+define('table/ProjectTable',['table/TableModel', 'table/TableView', 'table/Project'],
     function(Model, View, Project){
         return {
             init : function(container){

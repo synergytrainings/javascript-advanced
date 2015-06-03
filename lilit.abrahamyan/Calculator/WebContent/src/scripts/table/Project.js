@@ -1,4 +1,4 @@
-define('Project', function (){
+define('table/Project', function (){
 
 	var Project = function() {
 		this.id;

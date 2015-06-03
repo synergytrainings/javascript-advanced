@@ -1,4 +1,4 @@
-define('Calculator',['Model', 'View'],
+define('calculator/Calculator',['calculator/Model', 'calculator/View'],
     function(Model, View){
         return {
             init : function(container){

@@ -31,11 +31,17 @@ module.exports = function(grunt) {
     },
 	
     jasmine : {
-      src : 'src/scripts/**/*.js',
-	  specs : 'spec/test.js',
-	  helpers: [
+      src : [ 'src/scripts/**/*.js'],
+	  options: {
+		specs: ['spec/test.js'],
+		helpers: [
                 'node_modules/requirejs/require.js'
-            ]
+            ],
+		vendor: [
+			'node_modules/requirejs/require.js'
+		],
+		amd: true
+	  }
     },
 
     watch: {
@@ -90,7 +96,7 @@ module.exports = function(grunt) {
       }
     },
 	
-  /*requirejs: {
+ /* requirejs: {
       dist: {
         options: {
             baseUrl: 'src/scripts',

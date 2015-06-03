@@ -1,4 +1,4 @@
-define('CalculatorModelTest', ['Model, Enums'], function(Model, Enums) {
+define('CalculatorModelTest', ['requirejs', 'calculator/Model', 'calculator/Enums'], function(Model, Enums) {
 
   describe('JavaScript test Jasmine', function () {
     it('test calculate', function () {
@@ -43,4 +43,5 @@ define('CalculatorModelTest', ['Model, Enums'], function(Model, Enums) {
 	model.resetCalculator();
 	expect(model.result).toEqual(null);
     });
+  });
 });
