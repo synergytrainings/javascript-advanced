@@ -1,3 +1,13 @@
 .table input.editable {
 	width: 100%;
 }
+
+.loading {
+	background-color: #ccc;
+ 	height: 100%;
+ 	width: 100%;
+ 	position: absolute;
+ 	z-index: 100;
+ 	text-align: center;
+ 	opacity: 0.5;
+}

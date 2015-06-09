@@ -1,9 +1,10 @@
-define(['table/project'], function (Project) {
+define(['table/project', 'table/Sorting'], function (Project, Sorting) {
 	"use strict";
 
 	function Model(initialDataCnt) {
-		this.data = []; 
+		this.data; 
 		this.item;
+        this.sorting = {name: Sorting.NONE, cost: Sorting.NONE};
 		if (initialDataCnt) {
 			this.populateInitialData_(initialDataCnt);
 		}
@@ -22,8 +23,9 @@ define(['table/project'], function (Project) {
 		},
 
 		populateInitialData_: function(cnt){
+            this.data = [];
             for (var i=0; i<cnt; i++) {
-                this.data.push(new Project(this.generateUUID_(), 'Project No.' + i, (Math.random() * 10000).toFixed(2)));
+                this.data.push(new Project(this.generateUUID_(), 'Project No.' + i, +(Math.random() * 10000).toFixed(2)));
             }
             return this.data;
         },
@@ -38,6 +40,14 @@ define(['table/project'], function (Project) {
         	this.item.name = obj.name;
         	this.item.cost = obj.cost;
         	this.item = null;
+        },
+
+        updateAll: function(data) {
+            this.data = [];
+            for (var i=0; i<data.length; i++) {
+                var obj = data[i];
+                this.data.push(new Project(obj.id, obj.name, obj.cost));
+            }
         },
 
         add: function(obj){

@@ -1,31 +1,35 @@
-<table class="table table-hover table-condense">
-  <thead>
-    <tr>
-      <th class="col-md-1"></th>
-      <th class="col-md-7 text-center">
-        Project Name <span class="glyphicon glyphicon-sort-by-alphabet"></span>
-      </th>
-      <th class="col-md-4 text-center">
-        Project Cost <span class="glyphicon glyphicon-sort-by-alphabet"></span>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% _.each(projects, function(project){ %>
-    <tr class="editable-row" data-id="<%= project.id %>">
-      <td class="text-center">
-        <span class="glyphicon glyphicon-trash text-danger" data-btn-type="delete"></span>
-      </td>
-      <td class="text-left editable-cell" data-value="<%= project.name %>" data-type="name">
-        <%= project.name %>
-      </td>
-      <td class="text-right editable-cell" data-value="<%= project.cost %>" data-type="cost">
-        <%= project.getFormattedCost('$') %>
-      </td>
-    </tr>
-    <% }); %>
-  </tbody>
-</table>
+
+<div>
+  <div class="loading" style="display:none;">Loading...</div>
+  <table class="table table-hover table-condense">
+    <thead>
+      <tr>
+        <th class="col-md-1"></th>
+        <th class="col-md-7 text-center">
+          Project Name <span data-type="name" class="sortable-header glyphicon"></span>
+        </th>
+        <th class="col-md-4 text-center">
+          Project Cost <span data-type="cost" class="sortable-header glyphicon"></span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each(projects, function(project){ %>
+      <tr class="editable-row" data-id="<%= project.id %>">
+        <td class="text-center">
+          <span class="glyphicon glyphicon-trash text-danger" data-btn-type="delete"></span>
+        </td>
+        <td class="text-left editable-cell" data-value="<%= project.name %>" data-type="name">
+          <%= project.name %>
+        </td>
+        <td class="text-right editable-cell" data-value="<%= project.cost %>" data-type="cost">
+          <%= project.getFormattedCost('$') %>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProjectModal">
   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Project
@@ -65,4 +69,15 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-header">
+        <h1>Processing...</h1>
+    </div>
+    <div class="modal-body">
+        <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+    </div>
 </div>

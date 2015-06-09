@@ -1,6 +1,6 @@
 define(['text!../../table/templates/table.tpl.html', 
     'text!../../table/templates/editable.tpl.html', 
-    'table/model', 'underscore'], function(tpl, editableTpl, Model, _) {
+    'table/model', 'table/Sorting', 'underscore'], function(tpl, editableTpl, Model, Sorting, _) {
     "use strict";
     
     function View ($containerEl) {
@@ -12,6 +12,14 @@ define(['text!../../table/templates/table.tpl.html',
         this.element = $containerEl;
 
         this.render();
+
+        if (typeof(Worker) !== "undefined") {
+            if (typeof(w) == "undefined") {
+                this.worker = new Worker("table/scripts/sorter.js");
+            }
+        } else {
+            alert("Sorry! No Web Worker support.");
+        }
     }
 
     View.prototype =  {
@@ -52,6 +60,32 @@ define(['text!../../table/templates/table.tpl.html',
                 var $el = $(event.target);
                 that.model.deleteRow(that.getElementId_($el.closest('.editable-row')));
                 that.render();
+            });
+
+            $('.sortable-header', that.element).each(function(index, el) {
+                var $el = $(el),
+                    sorting = that.model.sorting[$el.data('type')];
+                $el.toggleClass('glyphicon-sort', sorting === Sorting.NONE);
+                $el.toggleClass('glyphicon-sort-by-attributes-alt', sorting === Sorting.ASC);
+                $el.toggleClass('glyphicon-sort-by-attributes', sorting === Sorting.DESC);
+            });
+
+            $('.sortable-header', that.element).on('click', function() {
+                var $el = $(event.target),
+                    column = $el.data('type');
+                var sorting = that.model.sorting[column];
+                if (sorting === Sorting.NONE || sorting === Sorting.DESC) {
+                    sorting = Sorting.ASC;
+                } else  {
+                    sorting = Sorting.DESC;
+                }
+                $('.loading', that.element).show();
+                that.worker.postMessage({model: that.model.getData(), column: column, asc: sorting === Sorting.ASC});
+                that.worker.onmessage = function(event) {
+                    that.model.sorting[event.data.column] = event.data.asc ? Sorting.ASC: Sorting.DESC;
+                    that.model.updateAll(event.data.model);
+                    that.render();
+                };
             });
 
             var $projectModal = $("#addProjectModal", that.element);

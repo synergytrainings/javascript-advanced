@@ -1,26 +1,28 @@
-define([], function () {
-    "use strict";
-
-    var shuffle = function(v) {
-        for(var j, x, i = v.length; i; j = Math.floor(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
-        return v;
-    };
-     
-    var isSorted = function(v){
-        for(var i=1; i<v.length; i++) {
-            if (v[i-1] > v[i]) { return false; }
+var shuffle = function(array) {
+    for (var j, x, i = array.length; i; j = Math.floor(Math.random() * i), x = array[--i], array[i] = array[j], array[j] = x);
+    return array;
+};
+ 
+var isSorted = function(array, column, asc){
+    for(var i=1; i<array.length; i++) {
+        var el1 = asc ? array[i-1] : array[i],
+            el2 = asc ? array[i] : array[i-1];
+        if (el1[column] > el2[column]) { 
+            return false; 
         }
-        return true;
     }
+    return true;
+}
 
-    return {
-        bogosort: function(v) {
-            var sorted = false;
-            while(sorted == false){
-                v = shuffle(v);
-                sorted = isSorted(v);
-            }
-            return v;
-        }
-    };
-});
+function bogosort (array, column, asc) {
+    var sorted = false;
+    while(sorted == false){
+        array = shuffle(array);
+        sorted = isSorted(array, column, asc);
+    }
+    postMessage({model: array, column: column, asc: asc});
+}
+
+onmessage = function(e) {
+    bogosort(e.data.model, e.data.column, e.data.asc);
+};

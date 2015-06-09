@@ -69,8 +69,7 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js', 'karma.conf.js',
-        '<%= config.app %>/scripts/**/*.js',
-        '!<%= config.app %>/scripts/vendor/*',
+        '<%= config.app %>/**/*.js',
         '<%= config.test %>/**/*.js'
       ]
     },
@@ -80,7 +79,7 @@ module.exports = function(grunt) {
         options: {
           import: 2
         },
-        src: ['<%= config.app %>/styles/**/*.css']
+        src: ['<%= config.app %>/**/*.css']
       }
     },
 
@@ -108,7 +107,7 @@ module.exports = function(grunt) {
           }
         }
       },
-      html: ['<%= config.dist %>/**/*.html', '!<%= config.dist %>/tempates/**/*.html']
+      html: ['<%= config.dist %>/*.html']
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -116,9 +115,9 @@ module.exports = function(grunt) {
       options: {
         dirs: ['<%= config.temp %>']
       },
-      html: ['<%= config.dist %>/**/*.html', '!<%= config.dist %>/tempates/**/*.html'],
-      css: ['<%= config.dist %>/styles/**/*.css'],
-      js: ['<%= config.dist %>/scripts/**/*.js']
+      html: ['<%= config.dist %>/*.html'],
+      css: ['<%= config.dist %>/**/*.css'],
+      js: ['<%= config.dist %>/**/*.js']
     },
 
     htmlmin: {
@@ -151,9 +150,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>/styles/',
-          src: '{,*/}*.css',
-          dest: '<%= config.temp %>/styles/'
+          cwd: '<%= config.app %>/',
+          src: '**/*.css',
+          dest: '<%= config.temp %>/'
         }]
       }
     },
@@ -163,10 +162,9 @@ module.exports = function(grunt) {
       dist: {
         files: {
           src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
+            '<%= config.dist %>/**/*.js',
+            '<%= config.dist %>/**/*.css',
             '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
             '<%= config.dist %>/*.{ico,png}'
           ]
         }
